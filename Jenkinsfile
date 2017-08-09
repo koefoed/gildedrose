@@ -8,7 +8,7 @@ node {
 			sh 'echo hello world'
 		}
 
-		#sh 'docker run -i --rm --name my-maven-project -v "$pwd":/usr/src/mymaven -w /usr/src/mymaven maven:3-jdk-8 mvn -Dmaven.test.failure.ignore clean package'
+		//sh 'docker run -i --rm --name my-maven-project -v "$pwd":/usr/src/mymaven -w /usr/src/mymaven maven:3-jdk-8 mvn -Dmaven.test.failure.ignore clean package'
 
       // Run the maven build
       if (isUnix()) {
