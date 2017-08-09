@@ -20,9 +20,12 @@ node {
 		}
 		*/
 	}
-   stage('Javadoc'){
-       sh "mvn site"
-   }
+	stage('Javadoc'){
+		withDockerContainer('maven:3-jdk-8'){
+			sh 'mvn site'
+		}
+		//sh "mvn site"
+	}
    stage('Results') {
       junit '**/target/surefire-reports/TEST-*.xml'
       archive 'target/*.jar'
